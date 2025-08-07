@@ -14,7 +14,14 @@ app.secret_key = os.environ.get('FLASK_SECRET_KEY') or secrets.token_hex(32)
 # You should save this key and reuse it, otherwise sessions will be invalidated on server restart
 
 # Database configuration
-
+db_config = {
+    'host': 'mysql-164ab3cb-deadshotik31-6cfc.i.aivencloud.com',
+    'user': 'avnadmin',
+    'password': 'AVNS_ZXoqPx0dsropOGIntWw',
+    'database': 'defaultdb',
+    'port': 13976,
+    'ssl_disabled': True  # Disable SSL for development
+}
 
 def get_db_connection():
     try:
@@ -202,4 +209,5 @@ def stadiums():
     return render_template('stadiums.html', stadiums=stadiums_data)
 
 if __name__ == '__main__':
+
     app.run(debug=True) 
