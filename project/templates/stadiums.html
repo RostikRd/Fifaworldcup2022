@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Stadiums{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mb-4">Stadiums</h1>
+    <div class="card">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>City</th>
+                            <th>Country</th>
+                            <th>Capacity</th>
+                            <th>Year Built</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for stadium in stadiums %}
+                        <tr>
+                            <td>{{ stadium.id }}</td>
+                            <td>{{ stadium.name }}</td>
+                            <td>{{ stadium.city }}</td>
+                            <td>{{ stadium.country }}</td>
+                            <td>{{ stadium.capacity }}</td>
+                            <td>{{ stadium.year_built }}</td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td colspan="6" class="text-center">No stadiums found</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mb-4">Dashboard</h1>
+    <div class="row">
+        <div class="col-md-3 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Teams</h5>
+                    <p class="card-text">View and manage team information.</p>
+                    <a href="{{ url_for('teams') }}" class="btn btn-primary">View Teams</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Players</h5>
+                    <p class="card-text">Access player statistics and profiles.</p>
+                    <a href="{{ url_for('players') }}" class="btn btn-primary">View Players</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Matches</h5>
+                    <p class="card-text">Check match schedules and results.</p>
+                    <a href="{{ url_for('matches') }}" class="btn btn-primary">View Matches</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Stadiums</h5>
+                    <p class="card-text">Explore stadium information.</p>
+                    <a href="{{ url_for('stadiums') }}" class="btn btn-primary">View Stadiums</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

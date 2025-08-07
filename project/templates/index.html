@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <h1 class="display-4 mb-4">Welcome to Sports Database</h1>
+            <p class="lead mb-4">Your comprehensive source for sports information, statistics, and more.</p>
+            
+            {% if not session.get('user_id') and not session.get('is_guest') %}
+            <div class="row justify-content-center gap-3">
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Sign In</h5>
+                            <p class="card-text">Already have an account? Sign in to access your dashboard.</p>
+                            <a href="{{ url_for('login') }}" class="btn btn-primary">Login</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Create Account</h5>
+                            <p class="card-text">New to Sports Database? Create your account now.</p>
+                            <a href="{{ url_for('register') }}" class="btn btn-success">Register</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Guest Access</h5>
+                            <p class="card-text">Just browsing? Continue as a guest user.</p>
+                            <a href="{{ url_for('guest_login') }}" class="btn btn-secondary">Guest Access</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% else %}
+            <div class="text-center">
+                <a href="{{ url_for('dashboard') }}" class="btn btn-primary btn-lg">Go to Dashboard</a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %} 
